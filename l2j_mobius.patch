@@ -1,0 +1,318 @@
+### Eclipse Workspace Patch 1.0
+#P L2J_Mobius_11.3_Shinemaker
+diff --git dist/game/data/instances/FallenEmperorsThrone.xml dist/game/data/instances/FallenEmperorsThrone.xml
+index c4652d0..ba0ae83 100644
+--- dist/game/data/instances/FallenEmperorsThrone.xml
++++ dist/game/data/instances/FallenEmperorsThrone.xml
+@@ -59,13 +59,70 @@
+ 			<npc id="26337" x="92348" y="162558" z="3489" heading="0" /> <!-- Helios Red Lightning -->
+ 		</group>
+ 		<group name="LEOPOLD" spawnByDefault="false">
+-			<npc id="26336" x="93531" y="162415" z="3487" heading="0" /> <!-- Leopold -->
++			<!-- left -->
++			<npc id="26336" x="92705" y="159925" z="3675" heading="0" /> <!-- Leopold -->
++			<npc id="29306" x="93098" y="160181" z="3675" heading="0" /> <!-- Leopold -->
++			<!-- right -->
++			<npc id="29306" x="91301" y="162871" z="3675" heading="0" /> <!-- Leopold -->
++			<npc id="26336" x="90907" y="162612" z="3675" heading="0" /> <!-- Leopold -->
+ 		</group>
+ 		<group name="LEOPOLD_ORIGIN" spawnByDefault="false">
+-			<npc id="26339" x="92601" y="162196" z="3464" heading="0" /> <!-- Leopold Origin -->
++		    <!-- Left -->
++			<npc id="29309" x="93746" y="161559" z="3597" heading="0" /> <!-- Leopold Origin -->
++			<npc id="29309" x="93709" y="161629" z="3597" heading="0" /> <!-- Leopold Origin -->
++			<npc id="29309" x="93666" y="161724" z="3597" heading="0" /> <!-- Leopold Origin -->
++			<npc id="29309" x="93653" y="161819" z="3597" heading="0" /> <!-- Leopold Origin -->
++		    <!-- right -->
++			<npc id="29309" x="93040" y="162743" z="3597" heading="0" /> <!-- Leopold Origin -->
++			<npc id="29309" x="92944" y="162778" z="3597" heading="0" /> <!-- Leopold Origin -->
++			<npc id="29309" x="92861" y="162835" z="3597" heading="0" /> <!-- Leopold Origin -->
++			<npc id="29309" x="92798" y="162912" z="3597" heading="0" /> <!-- Leopold Origin -->
+ 		</group>
+ 		<group name="ENUMA_ELISH_ORIGIN" spawnByDefault="false">
+-			<npc id="26340" x="92957" y="161640" z="3485" heading="0" /> <!-- Enuma ELish Origin -->
++		    <!-- right -->
++			<npc id="26340" x="93040" y="162743" z="3855" heading="0" > <!-- Enuma ELish Origin -->
++			<parameters>
++					<param name="Move_to_X" value="92824" />
++					<param name="Move_to_Y" value="161033" />
++					<param name="Move_to_Z" value="3855" />
++			</parameters>
++			</npc>
++		</group>
++		<group name="ENUMA_ELISH_ORIGIN" spawnByDefault="false">
++			<npc id="26340" x="92944" y="162778" z="3855" heading="0" > <!-- Enuma ELish Origin -->
++			<parameters>
++					<param name="Move_to_X" value="92824" />
++					<param name="Move_to_Y" value="161033" />
++					<param name="Move_to_Z" value="3855" />
++			</parameters>
++			</npc>
++		</group>
++				<group name="ENUMA_ELISH_ORIGIN" spawnByDefault="false">
++			<npc id="26340" x="92861" y="162835" z="3855" heading="0" > <!-- Enuma ELish Origin -->
++			<parameters>
++					<param name="Move_to_X" value="92824" />
++					<param name="Move_to_Y" value="161033" />
++					<param name="Move_to_Z" value="3855" />
++			</parameters>
++			</npc>
++		</group>
++				<group name="ENUMA_ELISH_ORIGIN" spawnByDefault="false">
++			<npc id="26340" x="92798" y="162912" z="3855" heading="0" > <!-- Enuma ELish Origin -->
++			<parameters>
++					<param name="Move_to_X" value="92824" />
++					<param name="Move_to_Y" value="161033" />
++					<param name="Move_to_Z" value="3855" />
++			</parameters>
++			</npc>
++		</group>
++		    <!-- left -->
++				<group name="ENUMA_ELISH_ORIGIN" spawnByDefault="false">
++			<npc id="26340" x="93746" y="161559" z="3855" heading="0" /> <!-- Enuma ELish Origin -->
++			<npc id="26340" x="93709" y="161629" z="3855" heading="0" /> <!-- Enuma ELish Origin -->
++			<npc id="26340" x="93666" y="161724" z="3855" heading="0" /> <!-- Enuma ELish Origin -->
++			<npc id="26340" x="93653" y="161819" z="3855" heading="0" /> <!-- Enuma ELish Origin -->
++			<npc id="29310" x="92717" y="160836" z="3855" heading="0" /> <!-- Enuma ELish Origin -->
++			<npc id="29310" x="91683" y="162243" z="3855" heading="0" /> <!-- Enuma ELish Origin -->
+ 		</group>
+ 	</spawnlist>
+ </instance>
+\ No newline at end of file
+diff --git dist/game/data/stats/npcs/26300-26399.xml dist/game/data/stats/npcs/26300-26399.xml
+index 19549d7..5a5c89b 100644
+--- dist/game/data/stats/npcs/26300-26399.xml
++++ dist/game/data/stats/npcs/26300-26399.xml
+@@ -1303,7 +1303,7 @@
+ 			</attribute>
+ 			<abnormalResist physical="0" magical="0" />
+ 		</stats>
+-		<status attackable="true" undying="true" canMove="false" />
++		<status attackable="true" undying="true" canMove="false" noSleepMode="true"/>
+ 		<skillList>
+ 			<skill id="4416" level="11" /> <!-- Giants -->
+ 			<skill id="14765" level="4" /> <!-- Vampiric Rage Resistance -->
+@@ -1320,8 +1320,11 @@
+ 			<skill id="16746" level="3" /> <!-- Helios -->
+ 			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+ 			<skill id="14804" level="10" /> <!-- Damage Reflection Resistance -->
++			<skill id="16609" level="1" /> <!-- Helios' Plasma Lv1 -->
++			<skill id="16610" level="1" /> <!-- Helios' Grand Plasma Lv1 -->
++			<!-- Need Skill Emperor Helios's Authority server ncwest na -->
+ 		</skillList>
+-		<ai clanHelpRange="1500" aggroRange="1000" isAggressive="true">
++		<ai clanHelpRange="1500" aggroRange="3000" isAggressive="true">
+ 			<clanList>
+ 				<clan>HELIOS</clan>
+ 			</clanList>
+@@ -1336,7 +1339,7 @@
+ 		<sex>MALE</sex>
+ 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
+ 			<vitals hp="7458119" hpRegen="3318" mp="51696" mpRegen="30" />
+-			<attack physical="1006201" magical="153218" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="40" distance="80" width="120" />
++			<attack physical="1006201" magical="153218" random="10" critical="4" accuracy="5" attackSpeed="253" type="SWORD" range="2800" distance="80" width="120" />
+ 			<defence physical="57068" magical="17230" />
+ 			<speed>
+ 				<walk ground="40" />
+@@ -1349,7 +1352,7 @@
+ 			</attribute>
+ 			<abnormalResist physical="0" magical="0" />
+ 		</stats>
+-		<status attackable="true" undying="true" canMove="false" />
++		<status attackable="true" undying="true" canMove="false" noSleepMode="true" />
+ 		<skillList>
+ 			<skill id="4416" level="11" /> <!-- Giants -->
+ 			<skill id="14765" level="4" /> <!-- Vampiric Rage Resistance -->
+@@ -1366,8 +1369,13 @@
+ 			<skill id="16746" level="3" /> <!-- Helios -->
+ 			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+ 			<skill id="14804" level="10" /> <!-- Damage Reflection Resistance -->
++			<skill id="16614" level="1" /> <!-- Helios Plasma Pressure Lv1 -->
++			<skill id="16615" level="1" /> <!-- Helios Plasma Wall Lv1 -->
++			<skill id="16727" level="1" /> <!-- Helios' Storm Fist Lv1 -->
++			<skill id="16617" level="1" /> <!-- Enuma Elish - Red Lightning Lv1 -->
++			<skill id="16618" level="1" /> <!-- Enuma Elish - Blue Lightning Lv1 -->
+ 		</skillList>
+-		<ai clanHelpRange="1500" aggroRange="1000" isAggressive="true">
++		<ai clanHelpRange="1500" aggroRange="2500" isAggressive="true">
+ 			<clanList>
+ 				<clan>HELIOS</clan>
+ 			</clanList>
+@@ -1396,7 +1404,7 @@
+ 			</attribute>
+ 			<abnormalResist physical="0" magical="0" />
+ 		</stats>
+-		<status attackable="true" canMove="false" />
++		<status attackable="true" canMove="false" noSleepMode="true" />
+ 		<skillList>
+ 			<skill id="4416" level="11" /> <!-- Giants -->
+ 			<skill id="14765" level="4" /> <!-- Vampiric Rage Resistance -->
+@@ -1413,8 +1421,13 @@
+ 			<skill id="16746" level="3" /> <!-- Helios -->
+ 			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+ 			<skill id="14804" level="10" /> <!-- Damage Reflection Resistance -->
++			<skill id="16621" level="1" /> <!-- Helios' Holy Spike Lv.1 -->
++			<skill id="16623" level="1" /> <!-- Helios' Bionic of Anger Lv.1 -->
++			<skill id="32353" level="1" /> <!-- Helios' Grand Plasma Lv.1 -->
++			<skill id="16611" level="1" /> <!-- Helios' Throne of Agony Lv.1 -->
++			<skill id="16623" level="1" /> <!-- Helios' Lightning of Anger Lv.1 -->
+ 		</skillList>
+-		<ai clanHelpRange="1500" aggroRange="1000" isAggressive="true">
++		<ai clanHelpRange="1500" aggroRange="2800" isAggressive="true">
+ 			<clanList>
+ 				<clan>HELIOS</clan>
+ 			</clanList>
+@@ -1494,7 +1507,7 @@
+ 		<race>CONSTRUCT</race>
+ 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+ 			<vitals hp="600826" hpRegen="11.4" mp="25848" mpRegen="30" />
+-			<attack physical="1006201" magical="153218" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="40" distance="80" width="120" />
++			<attack physical="1006201" magical="153218" random="20" critical="1" accuracy="9" attackSpeed="253" type="BLUNT" range="2000" distance="80" width="120" />
+ 			<defence physical="3888" magical="2924" />
+ 			<speed>
+ 				<walk ground="1" />
+@@ -1507,6 +1520,7 @@
+ 			</attribute>
+ 			<abnormalResist physical="0" magical="0" />
+ 		</stats>
++		<status canMove="false" />
+ 		<skillList>
+ 			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+ 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
+@@ -1522,6 +1536,7 @@
+ 			<skill id="4390" level="1" /> <!-- Mystic Immunity -->
+ 			<skill id="4045" level="1" /> <!-- Full Magic Attack Resistance -->
+ 			<skill id="16515" level="6" /> <!-- Party Mage Monster -->
++			<skill id="16634" level="1" /> <!-- Leopold Harpoon Lv.1 -->
+ 		</skillList>
+ 		<collision>
+ 			<radius normal="1" />
+@@ -1707,11 +1722,12 @@
+ 			<skill id="16417" level="10" /> <!-- Faint Attack Resistance -->
+ 			<skill id="16635" level="1" /> <!-- Enuma Elish Shot -->
+ 		</skillList>
+-		<ai type="BALANCED" clanHelpRange="1500" aggroRange="1000" isAggressive="true">
++		<ai type="BALANCED" clanHelpRange="5000" aggroRange="5000" isAggressive="true">
+ 			<clanList>
+ 				<clan>HELIOS</clan>
+ 			</clanList>
+ 		</ai>
++		<status attackable="true" noSleepMode="true" flying="true" />
+ 		<collision>
+ 			<radius normal="18" />
+ 			<height normal="45.5" />
+@@ -1816,6 +1832,7 @@
+ 				<clan>HELIOS</clan>
+ 			</clanList>
+ 		</ai>
++		<status attackable="true" noSleepMode="true" />
+ 		<collision>
+ 			<radius normal="24" />
+ 			<height normal="45.5" />
+diff --git dist/game/data/stats/npcs/29300-29399.xml dist/game/data/stats/npcs/29300-29399.xml
+index 2baa4fa..40f5115 100644
+--- dist/game/data/stats/npcs/29300-29399.xml
++++ dist/game/data/stats/npcs/29300-29399.xml
+@@ -135,7 +135,7 @@
+ 			</attribute>
+ 			<abnormalResist physical="0" magical="0" />
+ 		</stats>
+-		<status attackable="true" undying="true" />
++		<status attackable="true" canMove="false" undying="true" noSleepMode="true"  />
+ 		<skillList>
+ 			<skill id="4416" level="11" /> <!-- Giants -->
+ 			<skill id="14765" level="4" /> <!-- Vampiric Rage Resistance -->
+@@ -180,7 +180,7 @@
+ 			</attribute>
+ 			<abnormalResist physical="0" magical="0" />
+ 		</stats>
+-		<status attackable="true" undying="true" />
++		<status attackable="true" canMove="false" undying="true" noSleepMode="true"  />
+ 		<skillList>
+ 			<skill id="4416" level="11" /> <!-- Giants -->
+ 			<skill id="14765" level="4" /> <!-- Vampiric Rage Resistance -->
+@@ -210,6 +210,7 @@
+ 	<npc id="29305" level="105" type="GrandBoss" name="Helios" title="Emperor of the Beginning">
+ 		<race>GIANT</race>
+ 		<sex>MALE</sex>
++		
+ 		<acquire exp="612701674" sp="1225403" raidPoints="1000" />
+ 		<stats str="164" int="188" dex="55" wit="78" con="111" men="149">
+ 			<vitals hp="247524303" hpRegen="16062" mp="51696" mpRegen="30" />
+@@ -226,7 +227,7 @@
+ 			</attribute>
+ 			<abnormalResist physical="0" magical="0" />
+ 		</stats>
+-		<status attackable="true" />
++		<status attackable="true" canMove="false" noSleepMode="true"  />
+ 		<skillList>
+ 			<skill id="4416" level="11" /> <!-- Giants -->
+ 			<skill id="14765" level="4" /> <!-- Vampiric Rage Resistance -->
+@@ -243,7 +244,7 @@
+ 			<skill id="16746" level="2" /> <!-- Helios -->
+ 			<skill id="14804" level="10" /> <!-- Damage Reflection Resistance -->
+ 		</skillList>
+-		<ai clanHelpRange="1000" aggroRange="1000" isAggressive="true">
++		<ai clanHelpRange="1000" aggroRange="1500" isAggressive="true">
+ 			<clanList>
+ 				<clan>HELIOS</clan>
+ 			</clanList>
+@@ -359,6 +360,7 @@
+ 			</attribute>
+ 			<abnormalResist physical="0" magical="0" />
+ 		</stats>
++		<status attackable="false" canMove="false" noSleepMode="true" />
+ 		<skillList>
+ 			<skill id="4416" level="2" /> <!-- Magical Creatures -->
+ 			<skill id="14765" level="3" /> <!-- Vampiric Rage Resistance -->
+@@ -459,10 +461,6 @@
+ 		</collision>
+ 	</npc>
+ 	<npc id="29309" level="105" type="Monster" name="Leopold Origin" title="Ultimate Kamael">
+-		<parameters>
+-			<skill name="Skill01_ID" id="16636" level="1" />
+-			<skill name="Skill02_ID" id="16637" level="1" />
+-		</parameters>
+ 		<race>GIANT</race>
+ 		<sex>MALE</sex>
+ 		<stats str="88" int="79" dex="55" wit="78" con="82" men="78">
+@@ -505,12 +503,9 @@
+ 			<skill id="16416" level="10" /> <!-- Bluff Resistance -->
+ 			<skill id="16418" level="10" /> <!-- Seduction Resistance -->
+ 			<skill id="16417" level="10" /> <!-- Faint Attack Resistance -->
++            <!-- Leopold Mini Gun Skill ID 16632 Desatived -->
+ 		</skillList>
+-		<ai type="BALANCED" clanHelpRange="1000" aggroRange="1000" isAggressive="true">
+-			<clanList>
+-				<clan>HELIOS</clan>
+-			</clanList>
+-		</ai>
++		<status attackable="false" canMove="false" flying="false" noSleepMode="false" />
+ 		<collision>
+ 			<radius normal="18" />
+ 			<height normal="45.5" />
+@@ -560,12 +555,14 @@
+ 			<skill id="16418" level="10" /> <!-- Seduction Resistance -->
+ 			<skill id="16417" level="10" /> <!-- Faint Attack Resistance -->
+ 			<skill id="16635" level="1" /> <!-- Enuma Elish Shot -->
++			<skill id="16632" level="1" /> <!-- Check Leopold Mini Gun -->
+ 		</skillList>
+-		<ai type="BALANCED" clanHelpRange="1000" aggroRange="1000" isAggressive="true">
++		<ai type="BALANCED" clanHelpRange="5000" aggroRange="2800" isAggressive="true">
+ 			<clanList>
+ 				<clan>HELIOS</clan>
+ 			</clanList>
+ 		</ai>
++				<status attackable="true" flying="true" noSleepMode="true" />
+ 		<collision>
+ 			<radius normal="18" />
+ 			<height normal="45.5" />
+@@ -768,6 +765,8 @@
+ 			<skill id="4071" level="1" /> <!-- Bow/ Crossbow Resistance -->
+ 			<skill id="16657" level="1" /> <!-- Royal Aggression Aura -->
+ 			<skill id="16658" level="1" /> <!-- Royal Chain Strike -->
++			<skill id="16675" level="1" /> <!-- Hyper Giga Strike -->
++			<skill id="16676" level="1" /> <!-- Hyper Taunt -->
+ 		</skillList>
+ 		<ai clanHelpRange="1000" aggroRange="1000" isAggressive="true">
+ 			<clanList>
